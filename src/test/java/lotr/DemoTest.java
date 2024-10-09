@@ -5,13 +5,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DemoTest {
     @Test
-    public void testCharacterIsAlive() {
+    public void testCharacterIsAlive1() {
         Character elf = new Elf();
         assertTrue(elf.isAlive());
     }
 
     @Test
-    public void testFight() {
+    public void testFight1() {
         Character hobbit = new Hobbit();
         Character elf = new Elf();
         GameManager gameManager = new GameManager();
@@ -33,5 +33,12 @@ class DemoTest {
         GameManager gameManager = new GameManager();
         gameManager.fight(hobbit, king);
         assertTrue(true); 
+    }
+
+    @Test
+    public void testCreateCharacter() {
+        CharacterFactory factory = new CharacterFactory();
+        Character character = factory.createCharacter();
+        assertTrue(character instanceof Character);
     }
 }
