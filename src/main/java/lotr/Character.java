@@ -1,8 +1,10 @@
 package lotr;
+import java.util.Random;
 
 public abstract class Character {
     protected int power;
     protected int hp;
+    private Random random = new Random();
  
     public abstract void kick(Character c);
 
@@ -19,5 +21,11 @@ public abstract class Character {
 
     public int getPower() {
         return power;
+    }
+
+    protected void performKick(Character c) {
+        int damage = random.nextInt(this.power) + 1;
+        System.out.println(this.getClass().getSimpleName() + " delivers a kick " + damage + " damage to the enemy.");
+        c.hp -= damage;
     }
 }

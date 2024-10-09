@@ -10,9 +10,6 @@ public class King extends Character  {
 
     @Override
     public void kick(Character c) {
-        Random random = new Random();
-        int damage = random.nextInt(this.power) + 1;
-        System.out.println("King delivers a kick " + damage + " damage to the enemy.");
-        c.hp -= damage;
+        performKick(c);
     }
 }

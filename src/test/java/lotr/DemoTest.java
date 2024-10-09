@@ -36,6 +36,13 @@ class DemoTest {
     }
 
     @Test
+    public void testSetHpPreventsNegative() {
+        Character king = new King();
+        king.setHp(-3);
+        assertEquals(0, king.getHp());
+    }
+
+    @Test
     public void testCreateCharacter() {
         CharacterFactory factory = new CharacterFactory();
         Character character = factory.createCharacter();
